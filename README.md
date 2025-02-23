@@ -1,11 +1,12 @@
 # 🌱 Hydroponic Tower
+
+A **modular hydroponic tower** designed for space-saving and efficient plant growth. Using 3D-printed components, you can build your own vertical hydroponic system. 🚀
+
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-plus-plus.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/license-mit.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
-
-A **modular hydroponic tower** designed for space-saving and efficient plant growth. Using 3D-printed components, you can build your own vertical hydroponic system. 🚀
 
 ---
 
@@ -23,7 +24,6 @@ A **modular hydroponic tower** designed for space-saving and efficient plant gro
 🖨 **Recommended print settings:**
 - **Material:** PLA or PETG (PETG recommended for higher moisture resistance)
 - **Layer height:** 0.2 mm
-- **Walls:** 2-3
 - **Infill:** 15–30%
 - **Supports:** Not required
 
@@ -32,18 +32,25 @@ A **modular hydroponic tower** designed for space-saving and efficient plant gro
 ---
 
 ## 🛠️ Materials & Components
-### **🔩 Hardware:**
-- 3D-printed modules (STL files available)
-- Water pump (recommended: 5V or 12V)
-- PVC or silicone tubes
-- Net pots (50 mm or 75 mm)
-- Hydroponic nutrient solution
-- Water container (e.g., 10L bucket)
+
+### **🔩 Mechanical Hardware:**
+- **Water pump (5V or 12V recommended)** – For automated water circulation
+- **PVC or silicone tubes** – For water flow management
+- **Net pots (50 mm or 75 mm)** – For plant placement
+- **Hydroponic nutrient solution** – For plant growth
+- **Water container (e.g., 15L bucket)** – Holds the nutrient solution
 
 ### **🖥 Software & Electronics:**
-- Control with **ESP32** for automation and monitoring
-- **Custom PCB** (located in the `/PCB` folder) to manage sensors and actuators
-- Timer-based or sensor-driven watering system
+- **ESP32-S3 (Waveshare) with IPS LCD** – Main controller with display for monitoring & control
+- **Adafruit DS1307 RTC Module** – Real-time clock for precise scheduling
+- **VARTA Knopfzelle CR1220** – Battery for RTC backup
+- **DFRobot Capacitive Water Level Sensor** – Monitors water level in the reservoir
+- **Elecrow G1/2" Water Flow Sensor** – Measures water flow to detect pump failures
+- **Real-time clock (RTC) for pump scheduling**
+- **Capacitive water level sensor** to prevent dry-run situations
+- **Flow sensor to measure and validate water movement**
+- **Expandable with additional sensors (pH, EC, temperature)**
+- **WiFi/MQTT integration for remote monitoring**
 
 ---
 
@@ -55,8 +62,8 @@ A **modular hydroponic tower** designed for space-saving and efficient plant gro
 - [YouTube assembly video](https://www.youtube.com/watch?v=fMD0a88BzLg)
 - [Additional Printables template](https://www.printables.com/model/856640-hydroponic-tower)
 
-📂 **STL files** are available in this repository under [`/STL`](./STL) 
-📂 **PCB design files** are available under [`/PCB`](./PCB) 
+📂 **STL files are available in this repository under** [`/STL`](./STL)
+📂 **PCB design files are available under** [`/PCB`](./PCB)
 
 ---
 
@@ -67,14 +74,15 @@ A **modular hydroponic tower** designed for space-saving and efficient plant gro
 4️⃣ **Insert net pots & fill the tank with water/nutrient solution.**
 5️⃣ **Connect the pump & test!**
 
-💡 **Tip:** Use a timer for efficient watering.
+💡 **Tip:** Use the timer every hour for efficient watering.
 
 ---
 
 ## 🎯 Improvements & Ideas
-💡 **Sensors:** Monitor moisture & water level
-💡 **Automated watering:** Controllable via microcontroller
-💡 **LED grow lights:** Ideal for indoor setups
+💡 **pH & EC sensors:** Monitor nutrient quality
+💡 **Automated dosing system:** Adjust pH levels automatically
+💡 **LED grow lights:** Improve plant growth indoors
+💡 **WiFi/MQTT integration:** Remote monitoring & control
 
 ---
 
@@ -83,4 +91,4 @@ This project is licensed under the **MIT License** – Feel free to use, modify 
 
 ---
 
-💬 **Feedback or questions?** Open an issue or contact me directly! 🚀
+💬 **Feedback or questions?** Open an issue! 🚀
