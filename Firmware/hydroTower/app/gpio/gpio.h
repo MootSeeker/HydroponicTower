@@ -65,10 +65,24 @@ namespace GPIO
 
     class GpioInput : public GpioBase
     {
-        bool _state = false; 
+        private: 
+            bool _state = false; 
 
         public: 
-            GpioInput( const gpio_num_t pin, const bool invert ); 
+            constexpr GpioInput( const gpio_num_t pin, const bool invert = false ) :
+                GpioBase{ pin, 
+                            gpio_config_t
+                            {
+                                .pin_bit_mask   = static_cast<uint64_t>( 1 ) << pin, 
+                                .mode           = GPIO_MODE_INPUT, 
+                                .pull_up_en     = GPIO_PULLUP_DISABLE, 
+                                .pull_down_en   = GPIO_PULLDOWN_ENABLE, 
+                                .intr_type      = GPIO_INTR_DISABLE  
+                            }, 
+                        invert }
+            {
+
+            } 
 
             esp_err_t init( void ); 
 
