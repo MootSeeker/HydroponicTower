@@ -4,11 +4,27 @@
 #include "esp_log.h"
 #define LOG_TAG "APP_MAIN"
 
+static Main myMain; 
+
 extern "C" void app_main( void )
 {
-    while( true )
+
+    ESP_ERROR_CHECK( myMain.setup( )); 
+
+    while( pdTRUE )
     {
-        ESP_LOGI(LOG_TAG, "Hello World"); 
-        vTaskDelay( pdMS_TO_TICKS( 1000 )); 
+        myMain.run( ); 
     }
+}
+
+esp_err_t Main::setup( )
+{
+    esp_err_t status = ESP_OK; 
+    return status; 
+}
+
+void Main::run( )
+{
+    ESP_LOGI(LOG_TAG, "Hello World"); 
+    vTaskDelay( pdMS_TO_TICKS( 1000 )); 
 }
