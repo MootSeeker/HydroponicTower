@@ -21,7 +21,7 @@ esp_err_t Main::setup( )
 {
     esp_err_t status = ESP_OK; 
 
-    led.init( ); 
+    status |= led.init( ); 
     
     return status; 
 }
