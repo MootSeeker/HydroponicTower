@@ -30,7 +30,10 @@ esp_err_t Main::setup( )
 {
     esp_err_t status = ESP_OK; 
 
-    status |= led.init( ); 
+    status |= led.init( );     
+    status |= wifi.Init();
+
+    if (ESP_OK == status) status |= wifi.Begin();
     
     return status; 
 }
